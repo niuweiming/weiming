@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weiming's 个人网站</title>
     <style>
-        /* 设置页面的背景和字体 */
+        /* 页面背景及字体 */
         body {
             margin: 0;
             padding: 0;
@@ -16,37 +16,56 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
             overflow: hidden;
-            animation: backgroundAnimation 10s ease-in-out infinite;
         }
 
-        /* 动态背景渐变 */
-        @keyframes backgroundAnimation {
+        /* 主要容器，给它设置最大高度及滚动功能 */
+        .container {
+            max-height: 80vh;
+            width: 90%;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 页面标题的样式 */
+        h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(135deg, #ff6ec7, #f3a183);
+            -webkit-background-clip: text;
+            animation: glow 3s ease-in-out infinite alternate;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* 发光效果 */
+        @keyframes glow {
             0% {
-                background: linear-gradient(135deg, #ff6ec7, #f3a183);
-            }
-            50% {
-                background: linear-gradient(135deg, #f3a183, #ffd700);
+                text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #f3a183;
             }
             100% {
-                background: linear-gradient(135deg, #ff6ec7, #f3a183);
+                text-shadow: 0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7, 0 0 50px #f3a183;
             }
         }
 
-        /* 给每个段落添加一些炫酷效果 */
-        p {
-            font-size: 1.5em;
+        /* 内容段落样式 */
+        p, ul {
+            font-size: 1.2em;
             margin: 20px 0;
-            letter-spacing: 2px;
             line-height: 1.6;
+            text-align: left;
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 2s ease-in-out forwards;
-            text-align: left;
+            animation: fadeInUp 1s ease-in-out forwards;
         }
 
-        /* 动画效果：逐渐出现并向上移动 */
+        /* 动画：逐渐出现并向上移动 */
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -58,77 +77,58 @@
             }
         }
 
-        /* 设置页面的标题 */
-        h1 {
-            font-size: 3.5em;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            font-weight: bold;
-            background: -webkit-linear-gradient(#ff6ec7, #f3a183);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-
-        /* 发光效果 */
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #f3a183, 0 0 50px #f3a183;
-            }
-            100% {
-                text-shadow: 0 0 20px #ff6ec7, 0 0 30px #ff6ec7, 0 0 40px #ff6ec7, 0 0 50px #f3a183, 0 0 60px #f3a183;
-            }
-        }
-
-        /* 增加容器的宽度，使内容看起来更加整齐 */
-        div {
-            max-width: 900px;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* 增加小标题的样式 */
+        /* 小标题样式 */
         h2 {
             font-size: 2.2em;
             color: #ffd700;
             margin-top: 30px;
-            margin-bottom: 20px;
-            animation: fadeInUp 2s ease-in-out forwards;
+            margin-bottom: 15px;
             text-align: left;
+            animation: fadeInUp 1s ease-in-out forwards;
         }
 
-        /* 增加段落动画延迟时间 */
+        /* 列表样式 */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 10px 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        /* 给不同段落设置动画延迟 */
         p:nth-child(1) { animation-delay: 0.5s; }
         p:nth-child(2) { animation-delay: 1s; }
         p:nth-child(3) { animation-delay: 1.5s; }
         p:nth-child(4) { animation-delay: 2s; }
-        p:nth-child(5) { animation-delay: 2.5s; }
-        p:nth-child(6) { animation-delay: 3s; }
-        p:nth-child(7) { animation-delay: 3.5s; }
-        p:nth-child(8) { animation-delay: 4s; }
-        p:nth-child(9) { animation-delay: 4.5s; }
-        p:nth-child(10) { animation-delay: 5s; }
+        h2:nth-child(5) { animation-delay: 2.5s; }
+        ul:nth-child(6) { animation-delay: 3s; }
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Weiming's 个人网站</h1>
+        
+        <!-- 个人介绍部分 -->
         <p>Hello 大家好！我是 Weiming</p>
-        <p>这是我的个人网站。</p>
-        <p>我是一个准程序员，喜欢研究各种技术。目前我的技术栈是：擅长 Golang, MySQL, Redis 等后端技术，最近在研究 K8s, Docker 等容器化技术。对前端技术也很感兴趣，日后有机会一定研究。</p>
-        <p>我来自山西阳泉，目前是一名大三学生</p>
+        <p>这是我的个人网站。 我是一个准程序员，喜欢研究各种技术。目前我的技术栈是：擅长 Golang, MySQL, Redis 等后端技术，最近在研究 K8s, Docker 等容器化技术。对前端技术也很感兴趣，日后有机会一定研究。</p>
+        <p>我来自山西阳泉，目前是一名大三学生。</p>
 
+        <!-- 个人实习经历部分 -->
         <h2>个人实习经历：</h2>
-        <p>2024年5月，广州自媒体科技，第一份线上实习，Golang 后端开始实习。</p>
-        <p>2024年6月，北京有乐今天，第一份线下实习，Golang 后端开发实习，开始北漂，在望京 SOHO 上班。</p>
-        <p>2024年9月，回学校 remote 了一个星期，面过初创公司塞克洛普，通过 AI 为视觉障碍人提供服务，主要做后端开发。</p>
-        <p>2024年10月，辞职回家，拿下科目三，11月入职一平方科技，做后端开发实习生，线上实习，后端能力提升最多的一段实习。</p>
-        <p>2024年12月，入职百度，正式开始大厂实习，风控开发实习生，见识到了大厂基建的超慢审批流程。</p>
-        <p>2025年2月末，入职月之暗面，结束大厂实习，进入 Kimi 安全团队，虽然产出不多，但团队氛围很好。</p>
-        <p>2025年4月末，入职得物，第二段大厂实习，体验高并发与高性能技术栈，决定离开以追求更有趣的机会。</p>
-        <p>2025年6月，入职 Meshy，开始做 Infra 实习生，接触 K8s 等全新技术栈，备战秋招。</p>
+        <ul>
+            <li><strong>2024年5月：</strong>广州自媒体科技，第一份线上实习，Golang 后端开始实习。</li>
+            <li><strong>2024年6月：</strong>北京有乐今天，第一份线下实习，Golang 后端开发实习，开始北漂，在望京 SOHO 上班。</li>
+            <li><strong>2024年9月：</strong>回学校 remote 了一个星期，面过初创公司塞克洛普，通过 AI 为视觉障碍人提供服务，主要做后端开发。</li>
+            <li><strong>2024年10月：</strong>辞职回家，拿下科目三，11月入职一平方科技，做后端开发实习生，线上实习，后端能力提升最多的一段实习。</li>
+            <li><strong>2024年12月：</strong>入职百度，正式开始大厂实习，风控开发实习生，见识到了大厂基建的超慢审批流程。</li>
+            <li><strong>2025年2月末：</strong>入职月之暗面，结束大厂实习，进入 Kimi 安全团队，虽然产出不多，但团队氛围很好。</li>
+            <li><strong>2025年4月末：</strong>入职得物，第二段大厂实习，体验高并发与高性能技术栈，决定离开以追求更有趣的机会。</li>
+            <li><strong>2025年6月：</strong>入职 Meshy，开始做 Infra 实习生，接触 K8s 等全新技术栈，备战秋招。</li>
+        </ul>
+        
+        <!-- 结束语 -->
         <p>追梦永远在路上！</p>
     </div>
 </body>
